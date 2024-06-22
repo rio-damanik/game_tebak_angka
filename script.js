@@ -72,12 +72,13 @@ function playRound() {
     let winner;
     if (player1Score > player2Score) {
       winner = "Player 1";
+      alert(`Selamat! Permainan ini telah dimenangkan oleh ${winner}`);
     } else if (player1Score < player2Score) {
       winner = "Player 2";
+      alert(`Selamat! Permainan ini telah dimenangkan oleh ${winner}`);
     } else {
-      winner = "Tidak ada yang menang, Permainan Seri!";
+      alert("Permainan berakhir seri! Tidak ada yang menang.");
     }
-    alert(`Selamat ! Permainan ini telah di menangkan oleh ${winner}`);
     document.querySelector("button").disabled = true;
     document.getElementById("restart-button").disabled = false;
   }
