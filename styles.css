@@ -21,6 +21,10 @@ h1 {
   margin-bottom: 20px;
 }
 
+ul {
+  text-align: start;
+}
+
 .player {
   margin-bottom: 10px;
 }

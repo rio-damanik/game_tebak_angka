@@ -30,9 +30,10 @@ function playRound() {
     return;
   }
 
+  //angka random untuk tebakannya
   let correctNumber = Math.floor(Math.random() * 3) + 1;
 
-  let resultText = `Round ${round} of ${maxRounds}\nCorrect Number: ${correctNumber}\n`;
+  let resultText = `Round ${round} of ${maxRounds}\nTebakan yang benar adalah nomor --> ${correctNumber}\n`;
 
   let player1Correct = player1Input === correctNumber;
   let player2Correct = player2Input === correctNumber;
