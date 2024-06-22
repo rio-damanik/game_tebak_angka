@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Tebak Angka</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Game Tebak Angka</h1>
+      <div id="game">
+        <div id="round-info">Round 1 of 5</div>
+        <div class="player">
+          <h2>Player 1</h2>
+          <input type="number" id="player1-input" min="1" max="3" />
+        </div>
+        <div class="player">
+          <h2>Player 2</h2>
+          <input type="number" id="player2-input" min="1" max="3" />
+        </div>
+        <button onclick="playRound()">Submit</button>
+        <button onclick="restartGame()" id="restart-button" disabled>
+          Restart Game
+        </button>
+        <div id="scoreboard">
+          <h2>Scoreboard</h2>
+          <p>Player 1: <span id="player1-score">0</span></p>
+          <p>Player 2: <span id="player2-score">0</span></p>
+        </div>
+      </div>
+      <h5>Note : Program ini dibuat dari refrensi di internet <br> tetapi sudah mendapat di modifikasi</h4>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
