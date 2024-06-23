@@ -11,49 +11,71 @@
       <h1>Game Tebak Angka</h1>
       <div id="game">
         <div id="round-info">Round 1 of 5</div>
-        <div class="player">
-          <h2>Player 1</h2>
-          <input type="number" id="player1-input" min="1" max="3" />
+        <div id="game-container">
+          <div id="inputs-container">
+            <div class="player">
+              <h2>Player 1</h2>
+              <input type="number" id="player1-input" min="1" max="3" />
+            </div>
+            <div class="player">
+              <h2>Player 2</h2>
+              <input type="number" id="player2-input" min="1" max="3" />
+            </div>
+            <button onclick="playRound()">Submit</button>
+            <button onclick="restartGame()" id="restart-button" disabled>
+              Restart Game
+            </button>
+            <div id="scoreboard">
+              <h2>Scoreboard</h2>
+              <p>Player 1: <span id="player1-score">0</span></p>
+              <p>Player 2: <span id="player2-score">0</span></p>
+            </div>
+          </div>
+          <div id="results-container">
+            <table id="results-table">
+              <h3>TABEL RESULT</h3>
+              <thead>
+                <tr>
+                  <th>Round</th>
+                  <th>Player 1 Guess</th>
+                  <th>Player 2 Guess</th>
+                  <th>Correct Number</th>
+                  <th>Result</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
         </div>
-        <div class="player">
-          <h2>Player 2</h2>
-          <input type="number" id="player2-input" min="1" max="3" />
-        </div>
-        <button onclick="playRound()">Submit</button>
-        <button onclick="restartGame()" id="restart-button" disabled>
-          Restart Game
-        </button>
-        <div id="scoreboard">
-          <h2>Scoreboard</h2>
-          <p>Player 1: <span id="player1-score">0</span></p>
-          <p>Player 2: <span id="player2-score">0</span></p>
-        </div>
+        <p id="note">NOTE / INFO</p>
+        <ul class="note">
+          <li>
+            Ini adalah game sederhana simple, sebatas tebak"an hanya 3 angka
+            saja
+          </li>
+          <br />
+          <li>
+            Angka yang bisa di input hanya 1/2/3 pada player 1 dan player 2,
+            pastikan tidak sama
+          </li>
+          <br />
+          <li>
+            Klik submit untuk setelah menulis angka permainan berlangsung 5
+            ronde dan terhitung otomatis. <br />Angka yang di input akan
+            terhapus ketika sudah di submit dan tersimpan di tabel .
+          </li>
+          <br />
+          <li>
+            Ketika selesai maka pemenang ditentukan dan jika seri tidak ada yang
+            menang
+          </li>
+          <br />
+          <li>
+            Game bisa di restart silahkan click restart game dan muncul otomatis
+            setelah selesai
+          </li>
+        </ul>
       </div>
-      <p style="font-family: 'Courier New', Courier, monospace">NOTE / INFO</p>
-      <ul>
-        <li>
-          Ini adalah game sederhana simple , sebatas tebak"an hanya 3 angka saja
-        </li>
-        <li>
-          angka yang bisa di input hanya 1/2/3 pada player 1 dan player 2,
-          pastikan tidak sama
-        </li>
-        <li>
-          klik submit untuk setelah menulis angka permainan berlangsung 5 ronde
-          dan terhitung otomatis<br />
-          setelah submit angka bisa dirubah atau jika tetap sama klik submit
-          lagi <br />
-          ronde otomatis terhitung
-        </li>
-        <li>
-          Ketika selesai maka pemenang ditentukan dan jika seri tidak ada yang
-          menang
-        </li>
-        <li>
-          Game bisa di restart silahkan click restart game dan muncul otomatis
-          setelah selesai
-        </li>
-      </ul>
     </div>
     <script src="script.js"></script>
   </body>

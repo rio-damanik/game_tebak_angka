@@ -7,7 +7,7 @@ function playRound() {
   let player1Input = parseInt(document.getElementById("player1-input").value);
   let player2Input = parseInt(document.getElementById("player2-input").value);
 
-  // harap input angka 1-3 saja
+  // Ensure inputs are numbers between 1 and 3
   if (
     isNaN(player1Input) ||
     isNaN(player2Input) ||
@@ -22,7 +22,7 @@ function playRound() {
     return;
   }
 
-  // Harap tidak menginput angka yang sama
+  // Ensure inputs are not the same
   if (player1Input === player2Input) {
     alert(
       "Player tidak bisa menginput angka yang sama , player 1 dan 2 diharapkan input angka yang berbeda."
@@ -30,7 +30,7 @@ function playRound() {
     return;
   }
 
-  //angka random untuk tebakannya
+  // Generate random correct number
   let correctNumber = Math.floor(Math.random() * 3) + 1;
 
   let resultText = `Round ${round} of ${maxRounds}\nTebakan yang benar adalah nomor --> ${correctNumber}\n`;
@@ -52,16 +52,44 @@ function playRound() {
     resultText += "Player 2 Tebakan mu salah, Coba lagi !\n";
   }
 
-  if (!player1Correct && !player2Correct) {
-    alert(
-      `Round ${round} of ${maxRounds}\nSeri! Tebakan belum ada yang benar.`
-    );
-  } else {
-    alert(resultText);
-  }
+  alert(resultText);
 
   document.getElementById("player1-score").innerText = player1Score;
   document.getElementById("player2-score").innerText = player2Score;
+
+  // Update results table
+  let resultsTable = document.querySelector("#results-table tbody");
+  let newRow = document.createElement("tr");
+
+  let roundCell = document.createElement("td");
+  roundCell.innerText = round;
+
+  let player1GuessCell = document.createElement("td");
+  player1GuessCell.innerText = player1Input;
+
+  let player2GuessCell = document.createElement("td");
+  player2GuessCell.innerText = player2Input;
+
+  let correctNumberCell = document.createElement("td");
+  correctNumberCell.innerText = correctNumber;
+
+  let resultCell = document.createElement("td");
+  if (player1Correct && player2Correct) {
+    resultCell.innerText = "Both correct";
+  } else if (player1Correct) {
+    resultCell.innerText = "Player 1 correct";
+  } else if (player2Correct) {
+    resultCell.innerText = "Player 2 correct";
+  } else {
+    resultCell.innerText = "None correct";
+  }
+
+  newRow.appendChild(roundCell);
+  newRow.appendChild(player1GuessCell);
+  newRow.appendChild(player2GuessCell);
+  newRow.appendChild(correctNumberCell);
+  newRow.appendChild(resultCell);
+  resultsTable.appendChild(newRow);
 
   round++;
 
@@ -83,6 +111,10 @@ function playRound() {
     document.querySelector("button").disabled = true;
     document.getElementById("restart-button").disabled = false;
   }
+
+  // Clear inputs after submission
+  document.getElementById("player1-input").value = "";
+  document.getElementById("player2-input").value = "";
 }
 
 function restartGame() {
@@ -96,4 +128,8 @@ function restartGame() {
   document.getElementById("player2-input").value = "";
   document.querySelector("button").disabled = false;
   document.getElementById("restart-button").disabled = true;
+
+  // Clear results table
+  let resultsTable = document.querySelector("#results-table tbody");
+  resultsTable.innerHTML = "";
 }
