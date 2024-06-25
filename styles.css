@@ -112,3 +112,57 @@ thead {
   font-size: 30px;
   padding-top: 20px;
 }
+
+/* Media queries for responsive design */
+@media (max-width: 1000px) {
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  #game-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #inputs-container,
+  #results-container {
+    width: auto;
+    padding: 20px;
+  }
+
+  .note {
+    width: auto;
+    text-align: justify;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  #game-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  table {
+    width: 80%;
+    display: flex;
+    margin-left: 55px;
+  }
+
+  #inputs-container,
+  #results-container {
+    width: auto;
+    padding: 20px;
+  }
+  .note {
+    width: auto;
+    text-align: justify;
+  }
+}
