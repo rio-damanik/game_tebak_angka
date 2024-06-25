@@ -138,7 +138,7 @@ thead {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
   body {
     margin: 0;
     padding: 0;
@@ -152,7 +152,6 @@ thead {
 
   table {
     width: 80%;
-    display: flex;
     margin-left: 55px;
   }
 
