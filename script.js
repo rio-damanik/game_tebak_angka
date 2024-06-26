@@ -98,16 +98,20 @@ function playRound() {
       "round-info"
     ).innerText = `Round ${round} of ${maxRounds}`;
   } else {
+    let winnerMessage = document.getElementById("winner-message");
+    let winnerInfo = document.getElementById("winner-info");
     let winner;
     if (player1Score > player2Score) {
       winner = "Player 1";
-      alert(`Selamat! Permainan ini telah dimenangkan oleh ${winner}`);
+      winnerMessage.innerText = `Selamat! Permainan ini telah dimenangkan oleh ${winner}`;
     } else if (player1Score < player2Score) {
       winner = "Player 2";
-      alert(`Selamat! Permainan ini telah dimenangkan oleh ${winner}`);
+      winnerMessage.innerText = `Selamat! Permainan ini telah dimenangkan oleh ${winner}`;
     } else {
-      alert("Permainan berakhir seri! Tidak ada yang menang.");
+      winnerMessage.innerText =
+        "Permainan berakhir seri! Tidak ada yang menang.";
     }
+    winnerInfo.style.display = "block";
     document.querySelector("button").disabled = true;
     document.getElementById("restart-button").disabled = false;
   }
@@ -128,6 +132,7 @@ function restartGame() {
   document.getElementById("player2-input").value = "";
   document.querySelector("button").disabled = false;
   document.getElementById("restart-button").disabled = true;
+  document.getElementById("winner-info").style.display = "none";
 
   // Clear results table
   let resultsTable = document.querySelector("#results-table tbody");
